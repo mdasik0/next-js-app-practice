@@ -6,12 +6,11 @@ export const metadata = {
   };
 
 const MoreContactInfo = ({params}) => {
-
-    console.log(params)
+    const data = params.data
     
     return (
-        <div>
-            More Data here
+        <div className='my-36'>
+           You are seeing dynamic data from <span className='bg-yellow-400 p-2'>{params.data}</span> route
         </div>
     );
 };
