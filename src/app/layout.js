@@ -1,6 +1,7 @@
 import Link from "next/link";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Navbar from "@/components/Shared/Navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,21 +14,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav>
-          <ul className="flex gap-3 font-bold text-2xl">
-            <li>
-              <Link href={"/"}>Home</Link>
-            </li>{" "}
-            <li>
-              <Link href={"/contact-info"}>contact</Link>
-            </li>
-            <li>
-              <Link href={"/about"}>About</Link>
-            </li>
-          </ul>
-        </nav>
-        {children}
-        <footer>This is footer</footer>
+        <Navbar></Navbar>
+        <main className="max-w-[1380px] mx-auto">{children}</main>
       </body>
     </html>
   );
